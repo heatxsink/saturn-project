@@ -1,0 +1,219 @@
+body {
+	font-family:"Helvetica Neue",Helvetica,Arial,sans-serif;
+	line-height: 18px;
+	font-weight: normal;
+	margin: 0px;
+	padding: 0px;
+	border: 0px;
+	background: white;
+}
+
+#page {
+	min-width: 480px;
+	max-width: 950px;
+	margin: 0pt auto;
+}
+
+.clear {
+	clear: both;
+	width: 100%;
+}
+
+blockquote {
+	text-align: justify;
+	font-size: 18px;
+	font-style: italic;
+	margin: 0 0 30px 30px;
+	padding: 8px 0 0 30px;
+	color: #333;
+	background: url('/static/images/quote_slim.gif') no-repeat top left;
+}
+
+blockquote em {
+	margin-top: 18px;
+	display:block;
+}
+
+h1 {
+	font-size: 18px;
+	font-weight: bold;
+}
+
+h2 {
+	font-size: 18px;
+	font-weight: bold;
+}
+
+p {
+	text-align: justify;
+}
+
+a:link,
+a:visited {
+	font-weight: normal; 
+	text-decoration: none;
+	color: #0000CC;
+}
+
+a:hover,
+a:active {
+	font-weight: normal; 
+	text-decoration: underline;
+	color: #0000CC;
+}
+
+#content {
+	margin: 18px;
+}
+
+.blog-entry {
+	font-size: 14px;
+	margin-bottom: 18px;
+}
+
+.blog-entry-content,
+.blog-entry-header,
+.blog-entry-meta {
+	/* Left Empty */
+}
+
+.date {
+	color: #AAA;
+	font-size: 14px;
+	font-weight: normal;
+}
+
+.title a,
+.title a:link,
+.title a:visited {
+	font-weight: bold;
+	color: black;
+}
+
+.title a:active,
+.title a:hover {
+	font-weight: bold;
+	text-decoration: underline;
+	color: #0000CC;
+}
+
+.year {
+	padding-right: 18px;
+	padding-top: 18px;
+	padding-bottom: 18px;
+}
+
+#header {
+	margin-top: 18px;
+	display: block;
+	line-height: 36px;
+}
+
+#branding {
+	float: left;
+}
+
+#branding a:link.saturn,
+#branding a:visited.saturn {
+	text-decoration: none;
+}
+
+#branding a:hover.saturn,
+#branding a:active.saturn {
+	text-decoration: underline;
+}
+
+#branding a.saturn {
+	margin-right: 18px;
+	font-size: 36px;
+	color: purple;
+	font-weight: bold;
+	vertical-align: middle;
+	text-decoration: none;
+}
+
+#branding img {
+	vertical-align: middle;
+	border: none;
+}
+
+#navigation {
+	font-size: 18px;
+	float: right;
+	text-align: right;
+	vertical-align: middle;
+}
+
+.nav-button {
+	margin-left: 18px;
+}
+
+.nav-button b {
+	font-weight: bold;
+	text-decoration: none;
+	color: #0000CC;
+}
+
+.nav-button a {
+	font-weight: none;
+	text-decoration: underline;
+}
+
+.feed a img {
+	vertical-align: middle;
+	border: none;
+}
+
+#footer {
+	clear: both;
+	margin-top: 18px;
+	padding: 18px;
+	margin-bottom: 18px;
+	text-align: center;
+	border-top: solid 1px #CCC;
+	color: #666;
+}
+
+#footer a {
+	color: #AAA;
+	text-decoration: underline;
+	font-weight: normal;
+	margin-left: 18px;
+}
+
+.gmap {
+	width: 315px;
+	height: 300px;
+	border: solid 1px black;
+}
+
+.gbubble {
+	width: 13em;
+	font-size: small;
+}
+
+.gbubble p {
+	margin: 0;
+}
+
+.gbubble a {
+	font-size: small;
+}
+
+.shell {
+	background: #000;
+	color: #EEE;
+}
+
+.snippet {
+	padding: 10px 0 10px 10px;
+	font-family: "Courier New", Courier, mono, sans-serif;
+	background: #EFEFEF;
+	border: 1px solid #888;
+}
+
+code, pre {
+	overflow: auto;
+	font: 10pt "Courier New", Courier, mono, sans-serif;
+	white-space: pre;
+}

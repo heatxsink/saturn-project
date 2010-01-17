@@ -1,0 +1,81 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+	<meta http-equiv="Content-language" content="en" />
+	<meta http-equiv="Content-type" content="text/html; charset=utf-8" />
+	<link rel="shortcut icon" href="/static/god-mode/favicon.ico" type="image/x-icon" />
+	
+	<link rel="stylesheet" href="/static/css/blueprint/screen.css" type="text/css" media="screen, projection">
+	<link rel="stylesheet" href="/static/css/blueprint/print.css" type="text/css" media="print">
+	<link rel="stylesheet" type="text/css" href="/static/god-mode/god-mode.css" />
+
+	<!--[if lt IE 8]>
+	<link rel="stylesheet" href="/static/css/blueprint/ie.css" type="text/css" media="screen, projection">
+	<![endif]-->
+	
+	<script type="text/javascript" src="/static/js/jquery-1.3.2.min.js"></script>
+	<title>saturn - list entries</title>
+</head>
+<body>
+
+	<div id="header">
+		<div id="saturn-left">saturn</div>
+		<div id="saturn-right"><a class="nav" href="/god-mode/">archive</a> | <a class="nav" href="/god-mode/entry/create">create a post</a></div>
+	</div><!-- header -->
+
+	<div id="content">
+		<div id="entries">
+		{% if entries %}
+		{% if years|length > 1 %}
+		<div id="years">
+			{% for y in years %}
+			<span class="year">
+				{% if year == y %}
+				<b>{{ y }}</b>
+				{% else %}
+				<a class="link" href="/god-mode/entry/list/{{ y }}">{{ y }}</a>
+				{% endif %}
+			</span>
+			{% endfor %}
+		</div>
+		{% endif %}
+		<form class="myform" method="GET">
+			<fieldset>
+				<legend>archive</legend>
+				<ol>
+				{% for entry in entries %}
+					{% if entry.published %}
+					<li class="published">
+					{% else %}
+					<li class="draft">
+					{% endif %}
+						<a class="link" href="/god-mode/entry/read/{{ entry.id }}">view</a>
+						&nbsp;&nbsp;&nbsp;&nbsp;
+						<a class="link" href="/god-mode/entry/update/{{ entry.id }}">edit</a>
+						&nbsp;&nbsp;&nbsp;&nbsp;
+						<a class="link" href="#delete_{{ entry.id }}" onclick="on_delete({{ entry.id }});">delete</a>
+						&nbsp;&nbsp;&nbsp;&nbsp;
+						{{ entry.date_string }}
+						&nbsp;&nbsp;&nbsp;&nbsp;
+						{{ entry.title }}
+					</li>
+				{% endfor %}
+				</ol>
+			</fieldset>
+		</form>
+		{% else %}
+		<div class="balls"><h3>aww balls, you have not written any posts, want to <a class="link" href="/god-mode/entry/create">create</a> one?</h3></div>
+		{% endif %}
+		</div>
+	</div>
+
+	<script type="text/javascript">
+		function on_delete(entry_id) {
+			if (confirm("Do you really want to delete this blog post?")) {
+				var delete_endpoint = "/god-mode/entry/delete/" + entry_id;
+				window.top.location = delete_endpoint;
+		    }
+		}
+	</script>
+</body>
+</html>

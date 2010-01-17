@@ -1,0 +1,101 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+<meta http-equiv="Content-language" content="en" />
+<meta http-equiv="Content-type" content="text/html; charset=utf-8" />
+<link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
+<link rel="alternate" type="application/atom+xml" title="{{ blog_title }}" href= "{{ feed_url }}">
+<link rel="stylesheet" href="/static/css/blueprint/screen.css" type="text/css" media="screen, projection">
+<link rel="stylesheet" href="/static/css/blueprint/print.css" type="text/css" media="print">
+<link rel="stylesheet" type="text/css" href="/static/css/saturn.css"/>
+<!--[if lt IE 8]>
+<link rel="stylesheet" href="/static/css/blueprint/ie.css" type="text/css" media="screen, projection">
+<![endif]-->
+
+<title>{{ page_title }}</title>
+</head>	
+<body>
+<div id="page">
+	<div id="header">
+		
+		<div id="branding">
+			<span>
+				<a class="saturn" href="/">{{ blog_title }}</a>
+				<a href="/"><img src="/static/images/logo.gif" alt="logo"/></a>
+			</span>
+		</div>
+		
+		<div id="navigation">
+			{% if page == 'Blog' %}
+			<span class="nav-button"><b href="/">Blog</b></span>
+			{% else %}
+			<span class="nav-button"><a href="/">Blog</a></span>
+			{% endif %}
+			
+			{% if page == 'Archive' %}
+			<span class="nav-button"><b href="/archive">Archive</b></span>
+			{% else %}
+			<span class="nav-button"><a href="/archive">Archive</a></span>
+			{% endif %}
+			<span class="nav-button">&nbsp;<a href="{{ twitter_url }}">Follow</a></span>
+			<span class="nav-button"><img alt="Feed" src="/static/images/feed.png" />&nbsp;<a href="{{ feed_url }}">Feed</a></span>
+		</div>
+		<div class="clear"></div>
+	</div>
+	<div class="clear"></div>
+	<div id="content">
+		{% if page == 'Blog' or page == 'Entry' %}
+		<div class="blog">
+			{% for entry in entries %}
+				<div class="blog-entry">
+					<div class="clear"></div>
+					<div class="blog-entry-header">
+						<h1 class="title">
+							<a href="{{ entry.permalink }}">{{ entry.title }}</a>
+						</h1>
+						<h3 class="date">
+							{{ entry.date_string }}
+						</h3>
+
+					</div>
+					<div class="clear"></div>
+					
+					<div class="blog-entry-content">
+						<p>
+							{{ entry.body }}
+						</p>
+					</div>
+					
+					<div class="blog-entry-meta"></div>
+					<div class="clear"></div>
+				</div>
+			{% endfor %}	
+		</div>
+		{% endif %}
+		
+		{% if page == 'Archive' %}
+		<div id="archive">
+			{% for entry in entries %}
+			<div class="blog-entry">
+				<div class="clear"></div>
+				<div class="blog-entry-header">
+					<h1 class="title">
+						<a href="{{ entry.permalink }}">{{ entry.title }}</a>
+					</h1>
+					<h3 class="date">
+						{{ entry.date_string }}
+					</h3>
+				</div>
+			</div>
+			{% endfor %}
+		</div>
+		{% endif %}
+		<div class="clear"></div>
+	</div>
+	<div id="footer">
+		{{ blog_title }} &copy; 2010 &nbsp; {{ blog_description }}
+	</div>
+</div>
+<!-- nasty javascipts should go here -->
+</body>
+</html>

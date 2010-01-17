@@ -1,0 +1,177 @@
+/** GOD-MODE CSS **/
+
+body {
+	font-family:"Helvetica Neue",Helvetica,Arial,sans-serif;
+	line-height: 18px;
+	font-weight: normal;
+	margin: 0px;
+	padding: 0px;
+	border: 0px;
+	background: white;
+}
+
+#header {
+	background: black;
+	font-size: 14px;
+	line-height: 18px;
+	font-weight: bold;
+	color: white;
+}
+
+#saturn-left {
+	font-family: "Courier New",Arial,sans-serif;
+	padding: 9px;
+	background-color: purple;
+	float: left;
+	text-align: right;
+	width: 60px;
+}
+
+#saturn-right {
+	padding: 9px;
+	margin-left: 80px;
+	background-color: black;
+}
+
+p {
+	margin-bottom: 10px;
+}
+
+a.nav:link, 
+a.nav:visited {
+	color: white;
+	text-decoration: none;
+}
+
+a.nav:active {
+	background-color: purple;
+	color: white;
+	text-decoration: none;
+}
+
+a.nav:hover {
+	color: white;
+    text-decoration: underline;	
+}
+
+a.link:link,
+a.link:visited {
+    font-weight: normal; 
+    text-decoration: none;
+    color: blue;
+}
+
+a.link:hover {
+    font-weight: normal; 
+    text-decoration: underline;
+    color: blue;
+}
+
+a.link:active {
+    font-weight: normal; 
+    text-decoration: none;
+    background-color: blue;
+    color: white;
+}
+
+#blog-form {
+	width: 960px;
+}
+
+#preview {
+	margin-bottom: 72px;
+	width: 960px;
+	height: 320px;
+}
+
+#entries {
+	width: 960px;
+}
+#content {
+	padding: 18px;
+	margin-bottom: 18px;
+}
+
+ul {
+	margin-left: 15px;
+}
+
+li.draft {
+    color: red;
+}
+
+li.published {
+    color: black;
+}
+
+.year {
+	font-size: 14px;
+	margin-right: 18px;
+}
+
+#years {
+	margin-bottom: 18px;
+}
+
+/****** form css ******/
+form, label, input, select, textarea {
+	font-size: 14px;
+	line-height: 18px;
+}
+
+form div.submit input {
+	width: 100px;
+	float: right;
+}
+
+form.myform fieldset ol {
+        margin: 0;
+        padding: 0;
+}
+
+form.myform fieldset li {
+        list-style: none;
+        padding: 9px;
+        margin: 0;
+}
+
+form.myform legend {
+        padding: 0 9px;
+        font-weight: normal;
+}
+
+form.myform label {
+	margin-top: 8px;
+	vertical-align: top;
+	font-weight: normal;
+	width: 90px; /* Width of labels */
+}
+
+form.myform input[type="submit"], input[type="button"] {
+	padding: 2px 1px 0;
+	width: 100px;
+	font-size: 18px;
+}
+
+form.myform input[type="checkbox"] {
+	margin-top: 9px;
+	width: 20px;
+	padding: 9px;
+}
+
+/** some focus madness **/
+input:focus {
+	background: #FFFCCC;
+}
+
+form.myform input {
+	width: 800px; /* Width of labels */
+}
+
+textarea {
+	width: 790px;
+}
+
+textarea:focus {
+	background: #FFFCCC;
+}

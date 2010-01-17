@@ -1,0 +1,118 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+	<meta http-equiv="Content-language" content="en" />
+	<meta http-equiv="Content-type" content="text/html; charset=utf-8" />
+	<link rel="shortcut icon" href="/static/god-mode/favicon.ico" type="image/x-icon" />
+	
+	<link rel="stylesheet" href="/static/css/blueprint/screen.css" type="text/css" media="screen, projection">
+	<link rel="stylesheet" href="/static/css/blueprint/print.css" type="text/css" media="print">
+	<link rel="stylesheet" type="text/css" href="/static/god-mode/god-mode.css" />
+	<!--[if lt IE 8]>
+	<link rel="stylesheet" href="/static/css/blueprint/ie.css" type="text/css" media="screen, projection">
+	<![endif]-->
+	
+	<script type="text/javascript" src="/static/js/jquery-1.3.2.min.js"></script>
+	<script type="text/javascript" src="/static/god-mode/god-mode.js"></script>
+	
+	{% if entry.id == None %}
+	<title>saturn - create post</title>
+	{% else %}
+	<title>saturn - edit post</title>
+	{% endif %}
+</head>
+<body>
+	<div id="header">
+		<div id="saturn-left">saturn</div>
+		<div id="saturn-right"><a class="nav" href="/god-mode/">archive</a> | <a class="nav" href="/god-mode/entry/create">create a post</a></div>
+	</div><!-- header -->
+
+	<div id="content">
+		<div class="clear"></div>
+		{% if entry.id != None %}
+		<div id="preview">
+			<form class="myform">
+				<fieldset>
+					<legend>preview</legend>
+					<iframe src="/god-mode/entry/read/{{ entry.id }}" scrolling="auto" height="320" width="100%" frameborder="0"></iframe>
+				</fieldset>
+			</form>
+		</div>
+		<div class="clear"></div>
+		{% endif %}
+		
+		<div id="blog-form">
+			<form class="myform" method="POST" action="/god-mode/entry/update">
+				<input type="hidden" id="heater_id" name="heater_id" value="{{ entry.id }}"/>
+				<fieldset>
+					{% if entry.id == None %}
+					<legend>create a post</legend>
+					{% else %}
+					<legend>edit post</legend>
+					{% endif %}
+					<ol>
+						<li>
+						<label class="label" for="heater_title">title: </label>
+						<input type="text" id="heater_title" name="heater_title" value="{{ entry.title }}"/>
+						</li>
+						<li>
+						<label class="label" for="heater_date">date: </label>
+						<input type="text" id="heater_date" name="heater_date" value="{{ entry.date_string }}"/>
+						</li>
+
+						<li>
+						<label class="label" for="heater_slug">slug: </label>
+						<input type="text" id="heater_slug" name="heater_slug" value="{{ entry.slug }}"/>
+						</li>
+						
+						{% if entry.old_slug != None %}
+						<li>
+						<label class="label" for="heater_old_slug">old slug: </label>
+						<input type="text" id="heater_old_slug" name="heater_old_slug" value="{{ entry.old_slug }}"/>
+						</li>
+						{% endif %}
+						
+						<li>
+						<label class="label" for="heater_author">author: </label>
+						<input type="text" id="heater_author" name="heater_author" value="{{ entry.author }}"/>
+						</li>
+
+						<li>
+						<label class="label" for="heater_published">publish post? </label>
+						{% if entry.published %}
+						<input type="checkbox" id="heater_published" name="heater_published" checked="true"/>
+						{% else %}
+						<input type="checkbox" id="heater_published" name="heater_published"/>
+						{% endif %}
+						</li>
+						<li>
+						<label class="label" for="heater_body">body: </label>
+						<textarea id="heater_body" name="heater_body" cols="63" rows="13">{{ entry.body }}</textarea>
+						</li>
+						<li>
+						<label class="label" for="heater_tags">tags: </label>
+						<input type="text" id="heater_tags" name="heater_tags" value="{{ entry.tag_string }}"/>
+						</li>
+					</ol>
+				</fieldset>
+				<div class="submit">
+					<input type="submit" id="save_button" value="save"/>
+				</div>
+			</form>
+		</div>
+	</div>
+
+{% if entry.id == None %}
+<script type="text/javascript">
+	$("#heater_title").keypress(function(event) {
+		if(event.keyCode == 9) {
+			var title = $("#heater_title").val();
+			title = title.replace(/\s/g, '-').toLowerCase();
+			$("#heater_slug").val(title);
+		}
+	});
+</script>
+{% endif %}
+
+</body>
+</html>

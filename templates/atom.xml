@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en">
+<title>{{ title }}</title>
+<link rel="alternate" href="{{ blog_url }}" title="{{ blog_description }}" type="text/html" />
+<id>{{ blog_url }}</id>
+<icon>{{ favicon }}</icon>
+<updated>{{ updated }}</updated>
+<author><name>{{ author }}</name></author>
+{% for e in entries %}
+<entry>
+<title>{{ e.title }}</title>
+<id>{{ e.permalink }}</id>
+<link href="{{ e.permalink }}" rel="alternate"></link>
+<author><name>{{ e.author }}</name></author>
+<updated>{{ e.last_modified_string }}</updated>
+<published>{{ e.date_string }}</published>
+<content type="xhtml">
+<div xmlns="http://www.w3.org/1999/xhtml">
+{{ e.body }}
+</div>
+</content>
+</entry>
+{% endfor %}
+</feed>
