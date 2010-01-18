@@ -30,6 +30,7 @@ from saturn import named_entities
 from saturn import handlers
 from saturn import constants
 from saturn import model
+from saturn import utils
 
 class IndexEntriesHandler(handlers.RequestHandler):
 	def get(self):
@@ -140,6 +141,11 @@ class UpdateEntryHandler(handlers.RequestHandler):
 		edit_entry = {'entry' : entry, 'blog_title' : constants.BLOG_TITLE}
 		self.render_to_response('god-mode-entry.html', edit_entry)
 
+class PingEntryHandler(handlers.RequestHandler):
+	def get(self):
+		utils.ping_the_world(constants.BLOG_TITLE, constants.FEED_URL)
+		self.redirect('/god-mode/')
+
 class DeleteEntryHandler(handlers.RequestHandler):
 	def get(self, heater_id):
 		id = int(heater_id)
@@ -153,6 +159,7 @@ application = webapp.WSGIApplication(
 	[(r'/god-mode/?', IndexEntriesHandler),
 	 (r'/god-mode/entry/list/?', ListEntriesHandler),
 	 (r'/god-mode/entry/list/([^/]+)', ListEntriesHandler),
+	 (r'/god-mode/entry/ping/?', PingEntryHandler),
 	 (r'/god-mode/entry/create/?', CreateEntryHandler),
 	 (r'/god-mode/entry/read/([^/]+)', ReadEntryHandler),
 	 (r'/god-mode/entry/update/?', UpdateEntryHandler),

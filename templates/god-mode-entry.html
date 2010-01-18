@@ -24,7 +24,7 @@
 <body>
 	<div id="header">
 		<div id="saturn-left">saturn</div>
-		<div id="saturn-right"><a class="nav" href="/god-mode/">archive</a> | <a class="nav" href="/god-mode/entry/create">create a post</a></div>
+		<div id="saturn-right"><a class="nav" href="/god-mode/">archive</a> | <a class="nav" href="/god-mode/entry/create">create a post</a> | <a class="nav" href="/god-mode/#ping" onclick="on_ping();">ping the press</a></div>
 	</div><!-- header -->
 
 	<div id="content">
@@ -104,6 +104,13 @@
 			$("#heater_slug").val(title);
 		}
 	});
+	
+	function on_ping() {
+		if (confirm("Are you sure you want to ping blog post?")) {
+			var ping_endpoint = "/god-mode/entry/ping/";
+			window.top.location = ping_endpoint;
+	    }
+	}
 </script>
 {% endif %}
 

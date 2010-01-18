@@ -12,3 +12,4 @@ Features:
 1. 'god-mode' which is really admin mode.
 2. when editing a post, you get a rendered preview.
 3. valid atom feed support.
+4. ping support for feedburner, weblogs, and google blog search
