@@ -1,0 +1,14 @@
+saturn
+======
+
+saturn is a simple blog platform implementation. I use it almost everyday, 
+this was purpose built to my needs. I hope it would make a splendid base for you to build your blog platform needs!
+
+#### warning: I do not claim to be a python expert, so please feel free to email me ####
+
+Features:
+---------
+
+1. Fully valid atom feed.
+2. Full featured 'god-mode' which is really admin mode.
+3. When editing a post, you get a fully rendered preview.
