@@ -104,7 +104,10 @@
 			$("#heater_slug").val(title);
 		}
 	});
-	
+</script>
+{% endif %}
+
+<script type="text/javascript">
 	function on_ping() {
 		if (confirm("Are you sure you want to ping blog post?")) {
 			var ping_endpoint = "/god-mode/entry/ping/";
@@ -112,7 +115,5 @@
 	    }
 	}
 </script>
-{% endif %}
-
 </body>
 </html>
