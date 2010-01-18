@@ -1,5 +1,5 @@
-saturn
-======
+saturn-project
+==============
 
 saturn is a simple blog platform implementation. I use it almost everyday, 
 this was purpose built to my needs. I hope it would make a splendid base for you to build your blog platform needs!
