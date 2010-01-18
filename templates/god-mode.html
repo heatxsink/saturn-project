@@ -69,22 +69,22 @@
 		</div>
 	</div>
 
-	<script type="text/javascript">
-		function on_delete(entry_id) {
-			var answer = confirm("Do you really want to delete this blog post?");
-			if (answer) {
-				var delete_endpoint = "/god-mode/entry/delete/" + entry_id;
-				window.top.location = delete_endpoint;
-		    }
-		}
+<script type="text/javascript">
+	function on_delete(entry_id) {
+		var answer = confirm("Do you really want to delete this blog post?");
+		if (answer) {
+			var delete_endpoint = "/god-mode/entry/delete/" + entry_id;
+			window.top.location = delete_endpoint;
+	    }
+	}
 
-		function on_ping() {
-			var answer = confirm("Are you sure you want to ping blog post?");
-			if (answer) {
-				var ping_endpoint = "/god-mode/entry/ping/";
-				window.top.location = ping_endpoint;
-		    }
-		}
-	</script>
+	function on_ping() {
+		var answer = confirm("Are you sure you want to ping blog post?");
+		if (answer) {
+			var ping_endpoint = "/god-mode/entry/ping/";
+			$.ajax({ type: "GET", url: ping_endpoint, async: true, cache: false, success: function() { alert('Yay, you have pinged the press!'); } });
+	    }
+	}
+</script>
 </body>
 </html>

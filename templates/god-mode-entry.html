@@ -112,7 +112,7 @@
 		var answer = confirm("Are you sure you want to ping blog post?");
 		if (answer) {
 			var ping_endpoint = "/god-mode/entry/ping/";
-			window.top.location = ping_endpoint;
+			$.ajax({ type: "GET", url: ping_endpoint, async: true, cache: false, success: function() { alert('Yay, you have pinged the press!'); } });
 	    }
 	}
 </script>
