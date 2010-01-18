@@ -64,7 +64,8 @@ class ReadEntryHandler(handlers.RequestHandler):
 		#entry.body = entry.body
 		if not entry:
 			raise ValueError, 'Entry with ID %d does not exist.' % id
-		preview_entry = { 'blog_page_title': constants.BLOG_TITLE, 'entries': [entry], 'page' : 'Entry' }
+		title = "%s - %s" % (constants.BLOG_TITLE, entry.title)
+		preview_entry = { 'page_title': title, 'blog_title': constants.BLOG_TITLE, 'feed_url': constants.FEED_URL, 'twitter_url': constants.TWITTER_URL, 'blog_description': constants.BLOG_DESCRIPTION, 'entries': [entry], 'page': 'Entry'}
 		self.render_to_response('blog.html', preview_entry)
 
 class UpdateEntryHandler(handlers.RequestHandler):
