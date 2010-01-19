@@ -97,11 +97,11 @@ ul {
 }
 
 li.draft {
-    color: red;
+	color: red;
 }
 
 li.published {
-    color: black;
+	color: black;
 }
 
 .year {
