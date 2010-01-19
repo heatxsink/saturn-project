@@ -141,7 +141,7 @@ form.myform label {
 	margin-top: 8px;
 	vertical-align: top;
 	font-weight: normal;
-	width: 90px; /* Width of labels */
+	width: 90px;
 }
 
 form.myform input[type="submit"], input[type="button"] {
@@ -161,7 +161,7 @@ input:focus {
 }
 
 form.myform input {
-	width: 800px; /* Width of labels */
+	width: 800px;
 }
 
 textarea {
