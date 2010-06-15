@@ -1,3 +1,5 @@
+/** GOD-MODE CSS **/
+
 body {
 	font-family:"Helvetica Neue",Helvetica,Arial,sans-serif;
 	line-height: 18px;
@@ -10,7 +12,7 @@ body {
 
 #header {
 	background: black;
-	font-size: 14px;
+	font-size: 18px;
 	line-height: 18px;
 	font-weight: bold;
 	color: white;
@@ -18,17 +20,27 @@ body {
 
 #saturn-left {
 	font-family: "Courier New",Arial,sans-serif;
-	padding: 9px;
+	padding-top: 12px;
+	padding-right: 15px;
+	padding-bottom: 8px;
 	background-color: purple;
 	float: left;
 	text-align: right;
-	width: 60px;
+	width: 170px;
+}
+
+#saturn-left img {
+	vertical-align: middle;
 }
 
 #saturn-right {
-	padding: 9px;
-	margin-left: 80px;
+	padding: 20px;
+	padding-bottom: 25px;
+	padding-top: 25px;
+	padding-left: 40px;
+	margin-left: 160px;
 	background-color: black;
+	vertical-align: middle;
 }
 
 p {
@@ -37,6 +49,8 @@ p {
 
 a.nav:link, 
 a.nav:visited {
+	padding-right: 20px;
+	padding-left: 20px;
 	color: white;
 	text-decoration: none;
 }
@@ -49,7 +63,9 @@ a.nav:active {
 
 a.nav:hover {
 	color: white;
-    text-decoration: underline;	
+    text-decoration: none;
+	background-color: purple;
+	height: 200px;
 }
 
 a.link:link,
@@ -73,17 +89,19 @@ a.link:active {
 }
 
 #blog-form {
-	width: 960px;
+	display: block;
+	width: 945px;
 }
 
 #preview {
+	display: block;
 	margin-bottom: 72px;
-	width: 960px;
+	width: 945px;
 	height: 320px;
 }
 
 #entries {
-	width: 960px;
+	width: 945px;
 }
 #content {
 	padding: 18px;
@@ -95,11 +113,11 @@ ul {
 }
 
 li.draft {
-	color: red;
+    color: red;
 }
 
 li.published {
-	color: black;
+    color: black;
 }
 
 .year {
@@ -111,6 +129,7 @@ li.published {
 	margin-bottom: 18px;
 }
 
+/****** form css ******/
 form, label, input, select, textarea {
 	font-size: 14px;
 	line-height: 18px;
@@ -141,7 +160,7 @@ form.myform label {
 	margin-top: 8px;
 	vertical-align: top;
 	font-weight: normal;
-	width: 90px;
+	width: 90px; /* Width of labels */
 }
 
 form.myform input[type="submit"], input[type="button"] {
@@ -156,12 +175,13 @@ form.myform input[type="checkbox"] {
 	padding: 9px;
 }
 
+/** some focus madness **/
 input:focus {
 	background: #FFFCCC;
 }
 
 form.myform input {
-	width: 800px;
+	width: 800px; /* Width of labels */
 }
 
 textarea {
