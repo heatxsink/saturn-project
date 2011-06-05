@@ -4,8 +4,6 @@ saturn-project
 saturn is a simple blog platform implementation. I hope to use it everyday, 
 this was purpose built to my needs. I hope that it makes a splendid base for you to build upon or use.
 
-#### i am not a python expert, so please any bugs or suggestions send me e-mail ####
-
 features:
 ---------
 
